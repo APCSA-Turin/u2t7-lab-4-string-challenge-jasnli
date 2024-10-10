@@ -9,7 +9,7 @@ public class StringProblems{
     // endsLy("oddy") → false
     public boolean endsLy(String x){
             //implement code here
-            if (x.length >= 2) {
+            if (x.length() >= 2) {
                 if (x.substring(x.length() - 2, x.length()).equals("ly")) {
                     return true;
                 }
@@ -63,8 +63,8 @@ public class StringProblems{
     // withoutX("Hxix") → "Hxi"
     public String withoutX(String s1){
         if (s1.substring(s1.length() - 1).equals("x")) {
-            if (!s1.substring(0,1).equals(x)) {
-                return s1.substring(0, length() - 1);
+            if (!s1.substring(0,1).equals("x")) {
+                return s1.substring(0, s1.length() - 1);
             }
         }
         if (s1.substring(0,1).equals("x")) {
@@ -90,7 +90,7 @@ public class StringProblems{
         if (s1.substring(0,1).equals("f")) {
             return "Fizz";
         }
-        if (s1.substring(s1.length() - 1)) {
+        if (s1.substring(s1.length() - 1).equals("b")) {
             return "Buzz";
         }
         return s1;
@@ -107,14 +107,14 @@ public class StringProblems{
     // fizzString2(3) → "Fizz!"
     public String fizzString2(int x){
         if ((x % 3 == 0) && (x % 5 == 0)) {
-            return "FizzBuzz";
+            return "FizzBuzz!";
         }
         if (x % 3 == 0) {
-            return "Fizz";
+            return "Fizz!";
         }
         if (x % 5 == 0) {
-            return "Buzz";
+            return "Buzz!";
         }
-        return "";
+        return x + "!";
     }
 }
