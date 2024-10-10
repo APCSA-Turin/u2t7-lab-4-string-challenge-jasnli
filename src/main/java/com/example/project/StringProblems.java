@@ -28,10 +28,13 @@ public class StringProblems{
     // conCat("abc", "") → "abc"
     public String conCat(String s1, String s2){
         //implement code here
-        if (s1.substring(s1.length() - 1, s1.length()).equals(s2.substring(0,1))) {
-            return s1.substring(0, s1.length() - 1) + s2.substring(1);
+        if ((s1.length() == 0)||(s2.length() == 0)) {
+            return s1 + s2;
         }
-        return s1 + s2;
+        if ((!s1.substring(s1.length() - 1).equals(s2.substring(0,1)))){
+           return s1 + s2; 
+        }
+        return s1.substring(0, s1.length() - 1) + s2;
     }
 
     // Given a string, return a version without the first 2 chars. 
@@ -51,7 +54,7 @@ public class StringProblems{
             if (s1.substring(1,2).equals("b")) {
                 return s1;
             }
-            return s1.substring(0) + s1.substring(2);
+            return s1.substring(0, 1) + s1.substring(2);
         }
         return s1.substring(2);
     }
